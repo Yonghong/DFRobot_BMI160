@@ -1,8 +1,16 @@
-﻿# BMI160-Arduino
+﻿# Important Personal Experience
+When using Arduino Mega 2560 to check this library, if the pin SAO of the sensor is connected to the GND pin of the Mega 2560, then the value of the i2c address should be set to *0x68*, rather than *0x69* as follows on line 23 of the file stepCounterNormal.ino:
+```C
+const int8_t i2c_addr = 0x68;
+```
+Otherwise, it will throw "i2c initialize failed".
+
+Update date: 2020-11-10
+
+# BMI160-Arduino
 The BMI160 is a highly integrated, low power inertial measurement unit (IMU) that provides precise acceleration and angular rate (gyroscopic) measurement.
 The BMI160 contains 16 bit digtial,triaxial accelerometer and 16 bit digital, triaxial gyroscope.
 This example is for BMI160 sensor and it oprated via Arduino I2C.
-
 
 ## DFRobot_BMI160 Library for Arduino
 ---------------------------------------------------------
@@ -11,12 +19,16 @@ Provide an Arduino library to control the bmi160 to get acell, gyro and step cou
 
 ## Table of Contents
 
-* [Summary](#summary)
-* [Installation](#installation)
-* [Methods](#methods)
-* [Compatibility](#compatibility)
-* [History](#history)
-* [Credits](#credits)
+- [Important Personal Experience](#important-personal-experience)
+- [BMI160-Arduino](#bmi160-arduino)
+  - [## DFRobot_BMI160 Library for Arduino](#h2-iddfrobot_bmi160-library-for-arduino-181dfrobot_bmi160-library-for-arduinoh2)
+  - [Table of Contents](#table-of-contents)
+  - [Summary](#summary)
+  - [Installation](#installation)
+  - [Methods](#methods)
+  - [Compatibility](#compatibility)
+  - [History](#history)
+  - [Credits](#credits)
 
 ## Summary
 
